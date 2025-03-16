@@ -1,0 +1,38 @@
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #666;
+    border-radius: 50%;
+    animation: bounce 1.5s infinite;
+  }
+  
+  /* Animation */
+  .dot1 {
+    animation-delay: 0s;
+  }
+  
+  .dot2 {
+    animation-delay: 0.3s;
+  }
+  
+  .dot3 {
+    animation-delay: 0.6s;
+  }
+  
+  /* Bounce animation: moves the dot up and then back down */
+  @keyframes bounce {
+    0%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+  }
+  

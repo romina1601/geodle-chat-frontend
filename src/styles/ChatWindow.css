@@ -1,0 +1,34 @@
+.chat-window {
+    width: 600px;
+    height: 500px;
+    background-color: #FAF7F2;
+    border: 2px solid #FAF7F2;
+    border-radius: 8px;
+    overflow-y: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+  flex-direction: column;
+  }
+  
+  .message {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .message-label {
+    font-weight: bold;
+    width: 80px;
+    flex-shrink: 0;
+    text-align: right;
+    padding-right: 10px;
+  }
+  
+  .message-content {
+    flex-grow: 1;
+    white-space: pre-wrap; /* Allows long messages to wrap */
+    text-align: left;
+  }
+  
