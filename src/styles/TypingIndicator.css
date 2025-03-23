@@ -1,6 +1,7 @@
 .typing-indicator {
     display: flex;
     align-items: center;
+    align-self: center;
     gap: 5px;
     padding: 5px;
   }

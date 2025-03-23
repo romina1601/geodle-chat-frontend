@@ -1,16 +1,14 @@
 .chat-window {
-    width: 600px;
-    height: 500px;
-    background-color: #FAF7F2;
-    border: 2px solid #FAF7F2;
-    border-radius: 8px;
-    overflow-y: auto;
-    padding: 10px;
-    margin-bottom: 10px;
-    display: flex;
+  flex: 1;  /* Fills remaining vertical space in .chat-section */
+  overflow-y: auto;
+  margin-bottom: 10px;
+  border: 2px solid #FAF7F2;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
   flex-direction: column;
-  }
-  
+}
+
   .message {
     font-family: Arial, sans-serif;
     display: flex;

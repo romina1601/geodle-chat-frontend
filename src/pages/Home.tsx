@@ -64,14 +64,16 @@ const Home: React.FC = () => {
 
   return (
     <div className="home-container">
-      {!sessionStarted && (
-        <button className="start-game-button" onClick={handleStartGame}>
-          Start Game
-        </button>
-      )}
-      <ChatWindow messages={messages} />
-      {isTyping && <TypingIndicator />}
-      {!gameOver && <ChatInput onSendMessage={handleSendMessage} />}
+      <div className="chat-section">
+        {!sessionStarted && (
+          <button className="start-game-button" onClick={handleStartGame}>
+            Start Game
+          </button>
+        )}
+          <ChatWindow messages={messages} />
+          {isTyping && <TypingIndicator />}
+          {!gameOver && <ChatInput onSendMessage={handleSendMessage} />}
+      </div>
     </div>
   );
 };
