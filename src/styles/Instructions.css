@@ -1,0 +1,31 @@
+.home-container {
+    background-color: #A7CEC0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .instructions-section {
+    background-color: #FAF7F2;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+
+  .start-game-button {
+    align-self: center;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+ 
+  
