@@ -17,6 +17,7 @@
   }
 
   .start-game-button {
+    color: black;   /* force black text color inside button */
     align-self: center;
     margin-bottom: 20px;
     padding: 10px 20px;
