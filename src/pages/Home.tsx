@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ChatWindow from "../components/chat/ChatWindow";
 import ChatInput from "../components/chat/ChatInput";
 import TypingIndicator from "../components/chat/TypingIndicator";
@@ -7,13 +7,23 @@ import { askQuestion } from "../api/geodleApi";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import { addMessage, setGameOver, updateLastMessage } from "../store/gameSlice";
+import { useNavigate } from "react-router-dom";
 
 
 const Home: React.FC = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const messages = useSelector((state: RootState) => state.game.messages);
-  const gameOver = useSelector((state: RootState) => state.game.gameOver);
+  const sessionStarted = useSelector((state: RootState) => state.sessionStarted);
+  const messages = useSelector((state: RootState) => state.messages);
+  const gameOver = useSelector((state: RootState) => state.gameOver);
   const [isTyping, setIsTyping] = useState(false);
+
+    // If the session hasn't started, redirect back to instructions page
+    useEffect(() => {
+      if (!sessionStarted) {
+        navigate("/");
+      }
+    }, [sessionStarted, navigate]);
 
   const handleSendMessage = async (message: string) => {
     if (gameOver) return;
