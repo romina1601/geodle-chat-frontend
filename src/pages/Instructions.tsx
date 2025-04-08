@@ -1,15 +1,24 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { startGame } from "../api/geodleApi";
 import { setSessionStarted, setGameOver, addMessage, resetMessages } from "../store/gameSlice";
 import "../styles/Instructions.css";
+import { RootState } from "../store/store";
 
 const Instructions: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const { sessionStarted, gameOver } = useSelector((state: RootState) => state.game);
+
   const handleStartGame = async () => {
+    // If user already guessed or left the game while playing, load the existing chat
+    if (gameOver || sessionStarted) {
+        navigate("/home");
+        return;
+    }
+    // Else means it's the first time playing (today)
     try {
       const data = await startGame();
       console.log("Started session with id: ", data.session_id);
