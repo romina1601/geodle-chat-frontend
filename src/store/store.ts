@@ -11,9 +11,15 @@ const rootReducer = combineReducers({
   
 const persistConfig: PersistConfig<RootState> = {
     key: 'root',            // key used in localStorage
+    version: 1,             // schema version
     storage,                // storage engine (localStorage)
     transforms: [resetTransform],
-    whitelist: ['game'], // optional right now, cause there's only one slice atm.
+    whitelist: ['game'],    // optional right now, cause there's only one slice atm.
+
+    // for future, when schema version will change
+    migrate: async (state) => {
+        return state;
+    }
 };
 
 const persistedReducer = persistReducer<RootState>(persistConfig, rootReducer);
