@@ -1,0 +1,25 @@
+.header {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+.logo-container {
+    max-width: 500px;
+    margin: 0 auto;   /* centers the container itself */
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+    display: block; 
+}
+
+/* for smaller screens (like phones) */
+@media (max-width: 480px) {
+    .logo-container {
+      max-width: 250px;
+    }
+  }
+  
