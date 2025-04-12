@@ -1,9 +1,12 @@
-.home-container {
-    background-color: #A7CEC0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.instructions-container {
+  background-color: #A7CEC0;
+  min-height: 82vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
   }
   
   .instructions-section {
@@ -26,7 +29,15 @@
     border: 2px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
   }
+
+.start-game-button:hover,
+.start-game-button:focus {
+  background-color: #f0f0f0;
+  border-color: #999;
+  outline: none;
+}
   
  
   

@@ -1,19 +1,18 @@
   .home-container {
     background-color: #A7CEC0;
-    min-height: 100vh;
-    /* Center all elements in the page */
+    height:  80vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-  }
-
+    align-items: flex-start; /* align items to the top */
+    padding: 1rem 0rem;
+}
 
 .chat-section {
+  min-height: 75vh;
   background-color: #FAF7F2;
   border-radius: 8px;
   width: 90%;
   max-width: 600px;
-  height: 80vh; 
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -23,8 +22,7 @@
  /* For smaller devices make it have a bit of margin to the left and right */
 @media (max-width: 600px) {
   .chat-section {
-    width: 80%;
-    height: 70vh;
+    width: 90%;
   }
 }
 

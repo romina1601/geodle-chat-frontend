@@ -36,7 +36,7 @@ const Instructions: React.FC = () => {
   };
 
   return (
-    <div className="home-container">
+    <div className="instructions-container">
       <div className="instructions-section">
       <h1>Welcome to Geodle! 🌍</h1>
         <p>
