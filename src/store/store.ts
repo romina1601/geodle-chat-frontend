@@ -1,7 +1,7 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import gameReducer from './gameSlice';
 import storage from 'redux-persist/lib/storage';
-import { PersistConfig, persistReducer, persistStore } from 'redux-persist';
+import { FLUSH, PAUSE, PERSIST, PersistConfig, persistReducer, persistStore, PURGE, REGISTER, REHYDRATE } from 'redux-persist';
 import resetTransform from './resetTransform';
 
 
@@ -26,6 +26,12 @@ const persistedReducer = persistReducer<RootState>(persistConfig, rootReducer);
 
 export const store = configureStore({
     reducer: persistedReducer,
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+          serializableCheck: {
+            ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+          },
+        }),
   });
 
 export const persistor = persistStore(store);
