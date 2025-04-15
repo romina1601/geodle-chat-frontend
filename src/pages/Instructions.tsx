@@ -1,16 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { startGame } from "../api/geodleApi";
 import { setSessionStarted, setGameOver, addMessage, resetMessages } from "../store/gameSlice";
 import "../styles/Instructions.css";
-import { RootState } from "../store/store";
+import { useGameSlice } from "../hooks/useGameSlice";
 
 const Instructions: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { sessionStarted, gameOver } = useSelector((state: RootState) => state.game);
+  const { sessionStarted, gameOver } = useGameSlice();
 
   const handleStartGame = async () => {
     // If user already guessed or left the game while playing, load the existing chat
