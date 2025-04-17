@@ -1,0 +1,40 @@
+.footer {
+    width: 100%;
+    padding: 0;
+    margin-top: 20px;
+    text-align: center;
+    background-color: transparent;
+  }
+  
+  .footer-container {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem 1rem;
+  }
+  
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    margin: 0.5rem;
+  }
+  
+  .footer-link {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 600px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
