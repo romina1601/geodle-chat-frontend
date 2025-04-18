@@ -2,10 +2,19 @@
   box-sizing: border-box;
 }
 
-html, body {
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
   background-color: #A7CEC0;
 }
 
+#root > div {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 body {
   margin: 0;

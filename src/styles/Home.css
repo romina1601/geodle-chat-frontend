@@ -1,22 +1,23 @@
-  .home-container {
-    background-color: #A7CEC0;
-    height:  80vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* align items to the top */
-    padding: 1rem 0rem;
+.home-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px 40px;
+  width: 100%;
 }
 
 .chat-section {
-  min-height: 75vh;
-  background-color: #FAF7F2;
-  border-radius: 8px;
   width: 90%;
   max-width: 600px;
+  height: 500px;
+  background-color: #FAF7F2;
+  border-radius: 8px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
  /* For smaller devices make it have a bit of margin to the left and right */
