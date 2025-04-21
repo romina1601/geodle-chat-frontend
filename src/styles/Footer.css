@@ -14,6 +14,7 @@
     flex-wrap: wrap;
     align-items: center;
     padding: 1rem 1rem;
+    flex-wrap: nowrap;
   }
   
   .footer-left,
@@ -33,8 +34,9 @@
   
   @media (max-width: 600px) {
     .footer-container {
-      flex-direction: column;
       text-align: center;
+      padding: 0rem 3rem;
+      font-size: 0.85rem;
     }
   }
   
