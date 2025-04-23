@@ -16,20 +16,27 @@
     padding: 1rem 1rem;
     flex-wrap: nowrap;
   }
-  
-  .footer-left,
-  .footer-center,
-  .footer-right {
-    margin: 0.5rem;
+
+  .footer-left {
+    font-size: 0.85rem;
+    color: #333;
+    font-weight: 500;
   }
-  
-  .footer-link {
-    color: black;
+
+  .footer-icons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .footer-icon {
+    font-size: 1.1rem;
     text-decoration: none;
+    color: #333;
+    transition: color 0.4s ease;
   }
-  
-  .footer-link:hover {
-    text-decoration: underline;
+
+  .footer-icon:hover {
+    color: #555;
   }
   
   @media (max-width: 600px) {
@@ -38,5 +45,13 @@
       padding: 0rem 3rem;
       font-size: 0.85rem;
     }
+
+    .footer-left {
+        font-size: 0.8rem;
+      }
+    
+      .footer-icon {
+        font-size: 1rem;
+      }
   }
   
