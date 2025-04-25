@@ -3,7 +3,7 @@ import ChatWindow from "../components/chat/ChatWindow";
 import ChatInput from "../components/chat/ChatInput";
 import TypingIndicator from "../components/chat/TypingIndicator";
 import "../styles/Home.css";
-import { askQuestion } from "../api/geodleApi";
+import { askQuestion, validateAnswer } from "../api/geodleApi";
 import { useDispatch } from "react-redux";
 import { addMessage, setGameOver, updateLastMessage } from "../store/gameSlice";
 import { useNavigate } from "react-router-dom";
@@ -39,10 +39,13 @@ const Home: React.FC = () => {
         dispatch(updateLastMessage(chunk));
       });
 
-      // TODO: find better way to do this; ex: "Incorrect! Here’s another hint: The country is landlocked..." sets gameOver on true
-      // if user answered correctly, stop the game
-      if (fullAnswer.toLowerCase().includes("the country is") && fullAnswer.toLowerCase().includes("correct") ) {
-        dispatch(setGameOver(true));
+      try {
+        const isGameOver = await validateAnswer(fullAnswer);
+        if (isGameOver) {
+          dispatch(setGameOver(true));
+        }
+      } catch (error) {
+        console.error("Validation failed:", error);
       }
     } catch (error) {
       console.log("Error sending message:", error);

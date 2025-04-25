@@ -5,8 +5,6 @@ const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:800
 export interface StartGameResponse {
   message: string;
   session_id: string;
-  secret_country: string; // TODO: Remove this from UI later!
-  context: string;
 }
 
 
@@ -55,4 +53,25 @@ export async function askQuestion(question: string, onMessageChunk: (chunk: stri
 
   return fullMessage;
   
+}
+
+export async function validateAnswer(fullAnswer: string): Promise<boolean> {
+  const sessionId = getSessionId();
+  if (!sessionId) throw new Error("Session ID missing. Please start a new game.");
+
+  const response = await fetch(`${API_BASE_URL}/validate`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-Session-ID": sessionId,
+    },
+    body: JSON.stringify({ full_answer: fullAnswer }),
+  });
+
+  if (!response.ok) {
+    throw new Error("Validation request failed.");
+  }
+
+  const data = await response.json();
+  return data.is_game_over;
 }
