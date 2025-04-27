@@ -1,0 +1,115 @@
+.results-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .results-modal-content {
+    position: relative;
+    background: #faf7f2;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1.5px solid #3a2520b6;
+  }
+
+  @media (min-width: 768px) {
+    .results-modal-content {
+      width: 400px; /* Wider on desktop */
+      max-width: 90%;
+    }
+  }
+  
+  .results-modal-content h2 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  
+  .results-modal-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .results-modal-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
+  }
+
+  .close-button:hover {
+    color: gray;
+  }
+
+  .share-button {
+    background: white;
+    color: black;
+    border: 1.5px solid #3a2520b6;
+    border-radius: 6px;
+    padding: 8px 30px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    margin: 0 auto;
+    display: inline-block;
+  }
+  
+  .share-button:hover {
+    background: #f0f0f0;
+  }
+  
+  .share-button-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  
+  .share-icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor; /* Inherit text color */
+  }
+  
+  .toast {
+    position: fixed;    /* Always stay at bottom of page, even if it's scrollable */
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%); /* Move half of it width to the left, to center it(otherwise it starts from center)*/
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    opacity: 0.9;
+    z-index: 1100;
+    animation: fadeInOut 2s forwards;
+  }
+  
+  @keyframes fadeInOut {
+    0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  }
+  
+  

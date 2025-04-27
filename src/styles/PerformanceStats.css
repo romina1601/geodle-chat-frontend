@@ -1,0 +1,36 @@
+.performance-stats {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .badge-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: center;
+  }
+  
+  .badge-title {
+    text-align: left;
+    font-size: 16px;
+  }
+  
+  .badge-range {
+    text-align: center;
+    color: gray;
+    font-size: 14px;
+  }
+  
+  .badge-you {
+    text-align: right;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .highlight {
+    font-weight: bold;
+    color: black;
+  }
+  
