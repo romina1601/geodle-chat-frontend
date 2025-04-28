@@ -2,8 +2,8 @@ import { createTransform } from 'redux-persist';
 import { DateTime } from 'luxon';
 
 // Compute today's midnight in CET using Luxon.
-const getTodayCETMidnight = (): number => {
-  return DateTime.now().setZone("Europe/Paris").startOf("day").toMillis();
+const getTodayCETMidnight = (zone: string = "utc"): number => {
+  return DateTime.now().setZone(zone).startOf("day").toMillis();
 };
 
 const resetTransform = createTransform(
