@@ -92,7 +92,7 @@
   
   .toast {
     position: fixed;    /* Always stay at bottom of page, even if it's scrollable */
-    bottom: 50px;
+    bottom: 75px;
     left: 50%;
     transform: translateX(-50%); /* Move half of it width to the left, to center it(otherwise it starts from center)*/
     background-color: #333;

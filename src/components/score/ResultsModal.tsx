@@ -38,25 +38,15 @@ const ResultsModal: React.FC<ResultsModalProps> = ({ questionsCount, onClose }) 
 
     const handleCopyResults = () => {
         const shareText = generateShareText(questionsCount);
-      
-        if (navigator.share) {
-          navigator.share({
-            title: 'GeodleChat',
-            text: shareText,
-            url: 'https://geodle.chat',
-          }).catch((err) => {
-            console.error('Error sharing:', err);
-          });
-        } else {
-          navigator.clipboard.writeText(shareText)
+
+        navigator.clipboard.writeText(shareText)
             .then(() => {
-              setShowToast(true);
-              setTimeout(() => setShowToast(false), 2000); // Toast visible for 2 seconds
+            setShowToast(true);
+            setTimeout(() => setShowToast(false), 2000); // Toast visible for 2 seconds
             })
             .catch((err) => {
-              console.error("Failed to copy result:", err);
+            console.error("Failed to copy result:", err);
             });
-        }
     };
 
     return (
