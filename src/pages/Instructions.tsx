@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { startGame } from "../api/geodleApi";
+import { logSession, startGame } from "../api/geodleApi";
 import { setSessionStarted, setGameOver, addMessage, resetMessages } from "../store/gameSlice";
 import "../styles/Instructions.css";
 import { useGameSlice } from "../hooks/useGameSlice";
@@ -21,7 +21,11 @@ const Instructions: React.FC = () => {
     // Else means it's the first time playing (today)
     try {
       const data = await startGame();
-      console.log("Started session with id: ", data.session_id);
+
+      const sessionId = data.session_id
+      await logSession(sessionId);
+      console.log("Started session with id: ", sessionId);
+  
 
       // Clear previous messages and update state via Redux
       dispatch(resetMessages());

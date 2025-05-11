@@ -75,3 +75,21 @@ export async function validateAnswer(fullAnswer: string): Promise<boolean> {
   const data = await response.json();
   return data.is_game_over;
 }
+
+export async function logSession(sessionId: string): Promise<void> {
+  const time = new Date().toISOString();
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/log-session`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ session_id: sessionId, time }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to log session: ${response.statusText}`);
+    }
+  } catch (err) {
+    console.error("Error logging session:", err);
+  }
+}
