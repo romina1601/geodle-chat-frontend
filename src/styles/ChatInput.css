@@ -3,25 +3,45 @@
   flex-wrap: wrap;   /* allow the button to move below if it overflows */
   gap: 0.5rem;       /* spacaing between input and button */
   margin-top: 10px;
+  align-items: stretch;  
 }
 
 .chat-input {
   flex: 1;
-  min-width: 0; /* allow input to shrink smaller than its content so it doesn't overflow */
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-right: 10px;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .chat-button {
   color: black;
   flex-shrink: 0; /* prevent button from shrinking */
-  padding: 10px 20px;
+  padding: 0px 14px;
   font-size: 16px;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 5px;
   cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .chat-button {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+}
+
+.char-counter {
+  font-size: 0.85rem;
+  color: #666;
+  margin-left: 0.3rem;
+  width: 100%;
+  padding-top: 4px;
 }

@@ -5,6 +5,8 @@ export interface ChatInputProps {
   onSendMessage: (message: string) => void;
 }
 
+const MAX_CHARS = 40;
+
 const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage }) => {
   const [inputValue, setInputValue] = useState<string>("");
 
@@ -16,18 +18,27 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage }) => {
     }
   };
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value.slice(0, MAX_CHARS));
+  };
+
   return (
     <form onSubmit={handleSubmit} className="chat-input-form">
       <input
         type="text"
         placeholder="Ask a question..."
         value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+        onChange={handleChange}
+        maxLength={MAX_CHARS}
         className="chat-input"
       />
       <button type="submit" className="chat-button">
         Ask
       </button>
+      <div className="char-counter">
+        {MAX_CHARS - inputValue.length}/{MAX_CHARS}
+      </div>
+      
     </form>
   );
 };
