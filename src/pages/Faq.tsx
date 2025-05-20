@@ -1,4 +1,3 @@
-import React, { useRef } from 'react';
 import '../styles/Faq.css';
 import { faqSections } from './data/faqData';
 
