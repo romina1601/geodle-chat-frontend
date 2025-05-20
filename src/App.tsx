@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Instructions from "./pages/Instructions";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Faq from "./pages/Faq";
 
 const App: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Instructions />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/faq" element={<Faq />} />
           </Routes>
           </main>
         <Footer />
