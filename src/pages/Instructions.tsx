@@ -42,7 +42,7 @@ const Instructions: React.FC = () => {
   return (
     <div className="instructions-container">
       <div className="instructions-section">
-      <h1>Welcome to Geodle! 🌍</h1>
+      <h1>Welcome to GeodleChat! 🌍</h1>
         <p>
           You're about to chat with <strong>Geodle</strong> — an all-knowing geography expert that has picked a mystery country.
         </p>
